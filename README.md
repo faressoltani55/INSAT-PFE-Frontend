@@ -1,3 +1,6 @@
+# INSAT-PFE-Frontend
+Frontend Angular project for the INSAT PFE plateforme.
+
 # InsatPfe
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.0.
