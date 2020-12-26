@@ -3,22 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { SearchComponent } from './pages/search/search.component';
-import { CalendarComponent } from './pages/calendar/calendar.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/global-components/header/header.component';
+import { FooterComponent } from './components/global-components/footer/footer.component';
+import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
+import { NavbarComponent } from './components/global-components/navbar/navbar.component';
+import { SigninComponent } from './authentication/signin/signin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ProfileComponent,
-    SearchComponent,
-    CalendarComponent,
+    SigninComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NotFoundComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
