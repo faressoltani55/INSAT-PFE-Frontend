@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentHomeComponent implements OnInit {
 
+  submitted: boolean;
   constructor() { }
 
   ngOnInit(): void {
+    //should actually check database to see if a subject was submitted
+    this.submitted = false
   }
 
 }
