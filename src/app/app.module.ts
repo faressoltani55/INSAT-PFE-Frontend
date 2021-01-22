@@ -8,6 +8,8 @@ import { FooterComponent } from './components/global-components/footer/footer.co
 import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
 import { NavbarComponent } from './components/global-components/navbar/navbar.component';
 import { SigninComponent } from './authentication/signin/signin.component';
+import { ProfessorHomeComponent } from './components/professor-components/professor-home/professor-home.component';
+import { StudentHomeComponent } from './components/student-components/student-home/student-home.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SigninComponent } from './authentication/signin/signin.component';
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProfessorHomeComponent,
+    StudentHomeComponent
   ],
   imports: [
     BrowserModule,
