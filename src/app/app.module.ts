@@ -8,6 +8,8 @@ import { FooterComponent } from './components/global-components/footer/footer.co
 import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
 import { NavbarComponent } from './components/global-components/navbar/navbar.component';
 import { SigninComponent } from './authentication/signin/signin.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { SigninComponent } from './authentication/signin/signin.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
