@@ -16,6 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
     HomeRoutingModule,
     FormsModule,
     HttpClientModule
-  ]
+  ],
 })
 export class HomeModule { }

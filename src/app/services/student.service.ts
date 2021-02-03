@@ -12,6 +12,10 @@ export class StudentService {
   constructor(private http: HttpClient) { }
 
   public getStudent(id): Observable<Student> {
-    return this.http.get(Utils.baseUrl + '/student/'+ id ) as Observable<Student>;
+    return this.http.get(Utils.baseUrl + '/students/'+ id ) as Observable<Student>;
+  }
+
+  public updateStudent(id, body): Observable<Student> {
+    return this.http.put(Utils.baseUrl + '/students/'+ id, body ) as Observable<Student>;
   }
 }

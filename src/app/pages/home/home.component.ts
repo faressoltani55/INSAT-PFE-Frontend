@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit {
   subject: Subject;
 
   constructor(private pfeService: PfeService,
-    private http: HttpClient,
     private studentService: StudentService) { }
 
   ngOnInit() { 

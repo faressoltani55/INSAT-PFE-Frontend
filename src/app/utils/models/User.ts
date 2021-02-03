@@ -11,7 +11,7 @@ export class User{
     address: Address;
 }
 
-class Address{
+export class Address{
     street: string;
     city: string;
     state: string;
