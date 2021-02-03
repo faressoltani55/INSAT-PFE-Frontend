@@ -101,9 +101,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-
-            ]
+            "scripts": []
           }
         },
         "lint": {
@@ -134,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "insat-pfe"
+  "defaultProject": "insat-pfe",
+  "cli": {
+    "analytics": false
+  }
 }
