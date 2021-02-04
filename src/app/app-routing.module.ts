@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SigninComponent } from './authentication/signin/signin.component';
+import { SigningComponent } from './authentication/signin/signing.component';
 import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
 import { AuthGuard } from './services/guards/auth.guard';
 
@@ -11,28 +11,28 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
-  { path: 'signin', 
-    component: SigninComponent
+  { path: 'signin',
+    component: SigningComponent
   },
-  { path: 'home',     
+  { path: 'home',
     canActivate: [AuthGuard],
     loadChildren: () => import('./pages/home/home.module').then(mod => mod.HomeModule)
   },
-  { path: 'search',     
+  { path: 'search',
     canActivate: [AuthGuard],
     loadChildren: () => import('./pages/search/search.module').then(mod => mod.SearchModule)
   },
-  { path: 'calendar',  
-    canActivate: [AuthGuard],   
+  { path: 'calendar',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./pages/calendar/calendar.module').then(mod => mod.CalendarModule)
   },
-  { path: 'profile',    
+  { path: 'profile',
     canActivate: [AuthGuard],
     loadChildren: () => import('./pages/profile/profile.module').then(mod => mod.ProfileModule)
-    
+
   },
   { path: '**',
-    component: NotFoundComponent 
+    component: NotFoundComponent
   },
 ];
 

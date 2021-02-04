@@ -7,16 +7,30 @@ import { HeaderComponent } from './components/global-components/header/header.co
 import { FooterComponent } from './components/global-components/footer/footer.component';
 import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
 import { NavbarComponent } from './components/global-components/navbar/navbar.component';
-import { SigninComponent } from './authentication/signin/signin.component';
+import { SigningComponent } from './authentication/signin/signing.component';
+import { HttpClientModule } from '@angular/common/http';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {FormsModule} from '@angular/forms';
+import {JwtModule, JwtModuleOptions} from '@auth0/angular-jwt';
 import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
-import {PfeNotificationComponent} from './pfe-notification/pfe-notification.component';
+import {PfeNotificationComponent} from './components/pfe-notification/pfe-notification.component';
+
 
 const configSocket: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
+
+const JWT_Module_Options: JwtModuleOptions = {
+  config: {
+    tokenGetter: () => {
+      return localStorage.getItem('token');
+    },
+    allowedDomains: ['localhost:3000'],
+  }
+};
 
 @NgModule({
   declarations: [
     AppComponent,
-    SigninComponent,
+    SigningComponent,
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
@@ -26,7 +40,11 @@ const configSocket: SocketIoConfig = { url: 'http://localhost:3000', options: {}
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SocketIoModule.forRoot(configSocket)
+    HttpClientModule,
+    FontAwesomeModule,
+    FormsModule,
+    SocketIoModule.forRoot(configSocket),
+    JwtModule.forRoot(JWT_Module_Options)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,6 +11,13 @@ export class StudentService {
 
   constructor(private http: HttpClient) { }
 
+  public login(username: string, password: string): Observable<LoginResponse> {
+    return this.http.post(Utils.baseUrl + '/auth/local', {
+      email: username,
+      password: password,
+    }, ) as Observable<LoginResponse>;
+  }
+
   public getStudent(id): Observable<Student> {
     return this.http.get(Utils.baseUrl + '/students/'+ id ) as Observable<Student>;
   }
@@ -18,4 +25,10 @@ export class StudentService {
   public updateStudent(id, body): Observable<Student> {
     return this.http.put(Utils.baseUrl + '/students/'+ id, body ) as Observable<Student>;
   }
+}
+
+class LoginResponse {
+  public accessToken: string;
+  public refreshToken: string;
+  public user: any;
 }
