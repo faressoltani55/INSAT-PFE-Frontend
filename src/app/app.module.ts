@@ -8,8 +8,10 @@ import { FooterComponent } from './components/global-components/footer/footer.co
 import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
 import { NavbarComponent } from './components/global-components/navbar/navbar.component';
 import { SigninComponent } from './authentication/signin/signin.component';
-import { HttpClientModule } from '@angular/common/http';
+import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
+import {PfeNotificationComponent} from './pfe-notification/pfe-notification.component';
 
+const configSocket: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
   declarations: [
@@ -19,11 +21,12 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     NotFoundComponent,
     NavbarComponent,
+    PfeNotificationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    SocketIoModule.forRoot(configSocket)
   ],
   providers: [],
   bootstrap: [AppComponent]
