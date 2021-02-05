@@ -1,8 +1,11 @@
 import { Subject } from './Subject';
 export class Soutenance {
     public room: Room;
+    public president: string[];
+    public session; string;
     public dateTime: Date;
     public subject: Subject
+  dateString: string;
 }
 
 enum Room{

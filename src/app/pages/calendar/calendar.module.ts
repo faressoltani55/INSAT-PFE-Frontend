@@ -8,6 +8,7 @@ import interactionPlugin from '@fullcalendar/interaction'; // a plugin
 import timeGrigPlugin from '@fullcalendar/timegrid'; 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CalendarComponent } from './calendar.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -16,7 +17,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 ]);
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CalendarComponent
+  ],
   imports: [
     CommonModule,
     CalendarRoutingModule,
