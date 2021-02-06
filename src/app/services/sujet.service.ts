@@ -12,6 +12,10 @@ export class SujetService {
 
   constructor(private http: HttpClient) { }
 
+  public getSubjectByStudent(id): Observable<Subject> {
+    return this.http.get(Utils.baseUrl + '/pfe/student/'+ id ) as Observable<Subject>;
+  }
+
   public getAllSujets(): Observable<Subject[]> {
     return this.http.get(Utils.baseUrl + '/pfe' ) as Observable<Subject[]>;
   }
@@ -22,6 +26,10 @@ export class SujetService {
 
   public getSujetById(id: string): Observable<Subject> {
     return this.http.get(Utils.baseUrl + '/pfe/' + id ) as Observable<Subject>;
+  }
+
+  public addSujet(body): Observable<Subject> {
+    return this.http.post(Utils.baseUrl + '/pfe' , body) as Observable<Subject>;
   }
 
   public updateSujet(id: string, updatedFields): Observable<SubjectStatus> {

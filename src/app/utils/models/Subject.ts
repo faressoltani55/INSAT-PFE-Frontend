@@ -20,4 +20,5 @@ export class Subject{
   report: string;
   status: SubjectStatus;
   administrationNotice: string;
+  professorRequested: boolean;
 }
