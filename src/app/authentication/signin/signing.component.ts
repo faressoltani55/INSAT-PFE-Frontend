@@ -45,6 +45,7 @@ export class SigningComponent implements OnInit, OnDestroy {
       localStorage.setItem('token', data.accessToken);
       localStorage.setItem('refresh', data.refreshToken);
       localStorage.setItem('user', data.user._id);
+      localStorage.setItem('role', data.user.role);
       this.loading = false;
       this.router.navigateByUrl('/');
     }, error => {

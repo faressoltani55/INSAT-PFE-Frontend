@@ -21,6 +21,10 @@ export class SigninService {
     return !this.jwtHelper.isTokenExpired(token);
   }
 
+  getUserRole(): string{
+    return localStorage.getItem('role');
+  }
+
   setExternalWindow(window: Window | null): void {
     // create an external window
     console.log(window);
