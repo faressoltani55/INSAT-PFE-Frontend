@@ -18,6 +18,10 @@ export class StudentService {
     }, ) as Observable<LoginResponse>;
   }
 
+  getAll(): Observable<Student>{
+    return this.http.get(Utils.baseUrl + '/students') as Observable<Student>;
+  }
+
   public getStudent(id): Observable<Student> {
     return this.http.get(Utils.baseUrl + '/students/'+ id ) as Observable<Student>;
   }
