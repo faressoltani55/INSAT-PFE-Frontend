@@ -10,6 +10,8 @@ import {Router} from '@angular/router';
 })
 export class PfeNotificationComponent implements OnInit {
 
+  msg: string;
+
   constructor(public socketService: SocketService,
               private router: Router) { }
 
@@ -21,5 +23,4 @@ export class PfeNotificationComponent implements OnInit {
     this.socketService.displayAccepted = false;
     this.router.navigate(['calendar']);
   }
-
 }

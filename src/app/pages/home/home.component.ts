@@ -70,7 +70,7 @@ export class HomeComponent implements OnInit {
         this.stepThree = false;
 
       }
-    });  
+    });
   }
 
   subjectSubmit() {
