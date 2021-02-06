@@ -8,10 +8,10 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-  { path: '/home',                 title: 'Home',            icon:'nc-sound-wave',       class: '' },
-  { path: '/calendar',             title: 'Calendar',        icon:'nc-calendar-60',    class: '' },
-  { path: '/search',               title: 'Search',          icon:'nc-zoom-split',    class: '' },
-  { path: '/profile',              title: 'Profile',         icon:'nc-single-02',  class: '' },
+  { path: '/home',                 title: 'Home',            icon: 'nc-sound-wave',       class: '' },
+  { path: '/calendar',             title: 'Calendar',        icon: 'nc-calendar-60',    class: '' },
+  { path: '/search',               title: 'Search',          icon: 'nc-zoom-split',    class: '' },
+  { path: '/profile',              title: 'Profile',         icon: 'nc-single-02',  class: '' },
 ];
 
 @Component({
@@ -22,9 +22,10 @@ export const ROUTES: RouteInfo[] = [
 export class NavbarComponent implements OnInit {
 
   public menuItems: any[] | undefined;
-  ngOnInit() {
+  ngOnInit(): void {
       this.menuItems = ROUTES.filter(menuItem => menuItem);
+      console.log(this.menuItems);
   }
   }
-  
-  
+
+

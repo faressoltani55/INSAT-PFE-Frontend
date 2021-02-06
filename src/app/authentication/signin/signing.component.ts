@@ -46,7 +46,7 @@ export class SigningComponent implements OnInit, OnDestroy {
       localStorage.setItem('refresh', data.refreshToken);
       localStorage.setItem('user', data.user._id);
       this.loading = false;
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/');
     }, error => {
       console.log(error);
       this.loading = false;
@@ -64,9 +64,8 @@ export class SigningComponent implements OnInit, OnDestroy {
   private storageEventListener(event: StorageEvent): void {
     if (event.storageArea === localStorage) {
       try {
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/');
       } catch (e) {
-        console.log('hh');
       }
       this.onSubject.next({ key: event.key, value: event.newValue });
     }

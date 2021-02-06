@@ -15,7 +15,6 @@ import {JwtModule, JwtModuleOptions} from '@auth0/angular-jwt';
 import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
 import {PfeNotificationComponent} from './components/pfe-notification/pfe-notification.component';
 
-
 const configSocket: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 const JWT_Module_Options: JwtModuleOptions = {
@@ -31,11 +30,7 @@ const JWT_Module_Options: JwtModuleOptions = {
   declarations: [
     AppComponent,
     SigningComponent,
-    HeaderComponent,
-    FooterComponent,
     NotFoundComponent,
-    NavbarComponent,
-    PfeNotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +42,8 @@ const JWT_Module_Options: JwtModuleOptions = {
     JwtModule.forRoot(JWT_Module_Options)
   ],
   providers: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -25,11 +25,11 @@ export class HomeComponent implements OnInit {
   subject: Subject;
 
   constructor(private pfeService: PfeService,
-    private studentService: StudentService) { }
+              private studentService: StudentService) { }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.pfeService.getSubjectByStudent(localStorage.getItem('id')).subscribe( data => {
-      if(data){
+      if (data){
         this.subject = data;
 
         this.subjectInfoComplete = false;
@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
         this.stepTwo = false;
 
       }
-    });  
+    });
   }
 
   subjectSubmit() {
