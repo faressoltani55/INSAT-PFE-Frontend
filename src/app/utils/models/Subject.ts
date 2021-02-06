@@ -1,26 +1,24 @@
+import { SubjectStatus } from '../enums/subject-status';
+import { SubjectType } from '../enums/subject-type';
 import { Entreprise } from './Entreprise';
+import { Professor } from './Professor';
 import { Student } from './Student';
+import { Supervisor } from './Supervisor';
 
 export class Subject{
-    id: number;
-    title: string;
-    type: SubjectType;
-    description: string;
-    duration: number;
-    categories: Array<string>;
-    status: SubjectStatus;
-    entreprise: Entreprise;
-    student: Student
-}
-
-
-export enum SubjectType{
-    PROFESSIONAL = 'PROFESSIONAL',
-    RESEARCH = "RESEARCH"
-}
-
-export enum SubjectStatus{
-    PENDING = 'PENDING',
-    REFUSED = "REFUSED",
-    ACCEPTED = "ACCEPTED"
+    _id: string;
+  subjectNumber: string;
+  title: string;
+  type: SubjectType;
+  description: string;
+  duration: number;
+  categories: string[];
+  student: Student;
+  entreprise: Entreprise;
+  supervisor: Supervisor;
+  professor: Professor;
+  report: string;
+  status: SubjectStatus;
+  administrationNotice: string;
+  professorRequested: boolean;
 }
