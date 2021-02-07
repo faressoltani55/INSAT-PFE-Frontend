@@ -14,6 +14,10 @@ import {FormsModule} from '@angular/forms';
 import {JwtModule, JwtModuleOptions} from '@auth0/angular-jwt';
 import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
 import {PfeNotificationComponent} from './components/pfe-notification/pfe-notification.component';
+import { StudentRequestsComponent } from './components/professor-components/student-requests/student-requests.component';
+import { AssociatedSubjectsComponent } from './components/professor-components/associated-subjects/associated-subjects.component';
+import { ProfessorComponentsModule } from './components/professor-components/professor-components.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const configSocket: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
@@ -31,6 +35,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     AppComponent,
     SigningComponent,
     NotFoundComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,8 @@ const JWT_Module_Options: JwtModuleOptions = {
     FontAwesomeModule,
     FormsModule,
     SocketIoModule.forRoot(configSocket),
-    JwtModule.forRoot(JWT_Module_Options)
+    JwtModule.forRoot(JWT_Module_Options),
+    NgxPaginationModule,
   ],
   providers: [],
   exports: [

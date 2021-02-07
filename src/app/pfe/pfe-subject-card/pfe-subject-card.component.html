@@ -1,1 +1,164 @@
-<p>pfe-subject-card works!</p>
+<div *ngIf="subject" class="row card">
+    <div class="col-md-8 mx-auto">
+      <div class="card card-user text-center">
+        <div class="card-header">
+          <h5 class="card-title">Proposition Sujet PFE</h5>
+        </div>
+        <div class="card-body">
+          <div *ngIf="subject.student">
+          <div class="row">
+            <div class="col-md-12">
+              <br>
+              <h6>Étudiant</h6>
+              <br>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label for="lastname">Nom</label>
+                  <input type="text" class="form-control" disabled=""  [(ngModel)]='subject.student.lastname' #lastname>
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label for="firstname">Prénom</label>
+                  <input type="text" class="form-control" disabled=""  [(ngModel)]='subject.student.firstname' #firstname>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label for="major">N° d'inscription</label>
+                  <input type="text" class="form-control" disabled=""  [(ngModel)]='subject.student.studentNumber' #studentNumber>
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label for="cin">CIN</label>
+                  <input type="text" class="form-control" disabled="" [(ngModel)]='subject.student.CIN' #cin>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label for="major">Filière</label>
+                  <input type="text" class="form-control" disabled=""  [(ngModel)]='subject.student.major' #major>
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label for="diploma">Diplôme</label>
+                  <input type="text" class="form-control" disabled="" [(ngModel)]='subject.student.diploma' #diploma>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-md-12">
+                <br>
+                <h6>Sujet PFE proposé</h6>
+                <br>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="title">Titre Sujet</label>
+                  <input type="text" class="form-control" [(ngModel)]='subject.title' disabled=""   #title>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Description</label>
+                  <textarea class="form-control textarea" [(ngModel)]='subject.description' disabled></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Catégories</label>
+                  <div *ngFor="let category of subject.categories">
+                  <span class="badge badge-pill badge-info">{{category}}</span>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label for="type">Type</label>
+                  <input type="text" class="form-control" disabled="" [(ngModel)]='subject.type' #type>
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label for="duration">Durée (mois)</label>
+                  <input type="text" class="form-control" disabled="" [(ngModel)]='subject.duration' #duration>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="subject.entreprise">
+            <div class="row">
+              <div class="col-md-12">
+                <br>
+                <h6>Établissement d'acceuil</h6>
+                <br>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="entreprise">Nom</label>
+                  <input type="text" class="form-control" disabled="" [(ngModel)]='subject.entreprise.name' #entreprise>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="website">Site officiel</label>
+                  <input type="text" class="form-control" disabled=""  [(ngModel)]='subject.entreprise.website' #website>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="subject.supervisor">
+            <div class="row">
+              <div class="col-md-12">
+                <br>
+                <h6>Encadrant accueillant</h6>
+                <br>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="supervisor">Nom et Prénom</label>
+                  <input type="text" class="form-control" disabled="" [(ngModel)]='subject.supervisor.firstName + subject.supervisor.lastName' #supervisor>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="supervisorEmail">Email</label>
+                  <input type="text" class="form-control" disabled=""  [(ngModel)]='subject.supervisor.email'   #supervisorEmail>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="update ml-auto mr-auto">
+                <button type="button" class="btn btn-primary btn-round" >Accepter</button>
+                <button type="button" class="btn btn-danger btn-round">Refuser</button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
