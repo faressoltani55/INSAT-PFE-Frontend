@@ -11,7 +11,7 @@ export class CalendarService {
 
   constructor(private http: HttpClient) { }
 
-  public getSoutenances(): Observable<Soutenance> {
-    return this.http.get(Utils.baseUrl + '/soutenance') as Observable<Soutenance>;
+  public getSoutenances(): Observable<Soutenance[]> {
+    return this.http.get(Utils.baseUrl + '/soutenances') as Observable<Soutenance[]>;
   }
 }

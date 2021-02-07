@@ -16,7 +16,7 @@ import { HttpClient } from '@angular/common/http';
 export class CalendarComponent implements OnInit {
 
   soutenances: Array<Soutenance>;
-  events: [{title: string, date: Date}];
+  events: Array<any> = [];
   calendarOptions: CalendarOptions;
   @ViewChild('fullcalendar') fullcalendar: FullCalendarComponent;
 
@@ -27,36 +27,44 @@ export class CalendarComponent implements OnInit {
 
     forwardRef(() => Calendar);
 
-    this.calendarService.getSoutenances().subscribe( data =>{
-      this.soutenances.push(data);
+    this.calendarService.getSoutenances().subscribe( data => {
+      this.soutenances = data;
+      console.log(this.soutenances);
+      if (this.soutenances.length){
+        this.soutenances.forEach(item => {
+          let newEvent = {
+            title: item.subjectPfe.title,
+            date: new Date(item.dateTime).toISOString().slice(0, 10)
+          };
+          this.events.push(newEvent);
+        });
+        // for (let i = 0; i < this.soutenances.length; i++) {
+        //   let newEvent = {
+        //     title: this.soutenances[i].subject.title,
+        //     date: this.soutenances[i].dateTime
+        //   };
+        //   this.events.push(newEvent);
+        // }
+      }
+      this.calendarOptions = {
+        // plugins: [dayGridPlugin, timeGrigPlugin, interactionPlugin],
+        initialView: 'dayGridMonth',
+        editable: true,
+        dateClick: this.handleDateClick.bind(this),
+        events: this.events,
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: "dayGridMonth,timeGridWeek,timeGridDay"
+        },
+      };
+
+
     });
 
-    if(this.soutenances.length){
-      for (let i = 0; i < this.soutenances.length; i++) {
-        let newEvent = {
-          title: this.soutenances[i].subject.title,
-          date: this.soutenances[i].dateTime
-        };
-        this.events.push(newEvent);
-      }
-    }
 
 
-    this.calendarOptions = {
-      // plugins: [dayGridPlugin, timeGrigPlugin, interactionPlugin],
-      initialView: 'dayGridMonth',
-      editable: true,
-      dateClick: this.handleDateClick.bind(this),
-      events: this.events,
-      headerToolbar: {
-        left: 'prev,next today',
-        center: 'title',
-        right: "dayGridMonth,timeGridWeek,timeGridDay"
-      },
-    };
   }
-
-  
 
   handleDateClick(arg) {
     alert('date click! ' + arg.dateStr)

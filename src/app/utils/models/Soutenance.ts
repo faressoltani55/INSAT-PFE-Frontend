@@ -4,7 +4,7 @@ export class Soutenance {
     public president: string[];
     public session; string;
     public dateTime: Date;
-    public subject: Subject
+    public subjectPfe: Subject
   dateString: string;
 }
 
