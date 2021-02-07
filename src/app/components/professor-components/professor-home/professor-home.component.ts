@@ -9,15 +9,15 @@ import { Subject } from 'src/app/utils/models/Subject';
 })
 export class ProfessorHomeComponent implements OnInit {
 
-  pfeSubjectsWhereRequestedAsProfessor
+  listingType = 1;
+
   constructor( private sujetService: SujetService) { }
 
   ngOnInit(): void {
-    this.sujetService.getSubjectByRequestedProfessor(localStorage.getItem('user')).subscribe((data) => {
-      console.log(data)
-      this.pfeSubjectsWhereRequestedAsProfessor = data
-    }
-    )
+  }
+
+  setListingType(num: number): void {
+    this.listingType = num;
   }
 
 }

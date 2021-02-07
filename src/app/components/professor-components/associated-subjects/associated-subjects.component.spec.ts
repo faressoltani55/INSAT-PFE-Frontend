@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SupervisedSubjectsComponent } from './supervised-subjects.component';
+import { AssociatedSubjectsComponent } from './associated-subjects.component';
 
-describe('SupervisedSubjectsComponent', () => {
-  let component: SupervisedSubjectsComponent;
-  let fixture: ComponentFixture<SupervisedSubjectsComponent>;
+describe('AssociatedSubjectsComponent', () => {
+  let component: AssociatedSubjectsComponent;
+  let fixture: ComponentFixture<AssociatedSubjectsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SupervisedSubjectsComponent ]
+      declarations: [ AssociatedSubjectsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SupervisedSubjectsComponent);
+    fixture = TestBed.createComponent(AssociatedSubjectsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -5,6 +5,7 @@ import { PfeSubjectCardComponent } from './pfe-subject-card/pfe-subject-card.com
 // import { PfeSearchComponent } from './pfe-search/pfe-search.component';
 import { PfeSoutenanceCardComponent } from './pfe-soutenance-card/pfe-soutenance-card.component';
 import { PfeSoutenanceCalendarComponent } from './pfe-soutenance-calendar/pfe-soutenance-calendar.component';
+import { FormsModule } from '@angular/forms';
 // import { PfeSearchBarComponent } from './pfe-search-bar/pfe-search-bar.component';
 // import { PfeSearchFilterComponent } from './pfe-search-filter/pfe-search-filter.component';
 
@@ -13,7 +14,8 @@ import { PfeSoutenanceCalendarComponent } from './pfe-soutenance-calendar/pfe-so
 @NgModule({
   declarations: [PfeListingComponent, PfeSubjectCardComponent, PfeSoutenanceCardComponent, PfeSoutenanceCalendarComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class PfeModule { }

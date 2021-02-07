@@ -33,9 +33,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/profile/profile.module').then(mod => mod.ProfileModule)
 
   },
-  { path: 'prof-home',
-    component: ProfessorHomeComponent
-  },
   { path: '**',
     component: NotFoundComponent
   },
