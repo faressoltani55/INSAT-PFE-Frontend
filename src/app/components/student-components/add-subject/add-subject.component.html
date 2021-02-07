@@ -4,13 +4,13 @@
            <div class="stepCircle" [ngStyle]="{'background': stepOne ? 'green':'lightgrey'}">
                1
            </div>
-             
-           <div class="stepConectorPiece" [ngStyle]="{'background': stepOne ? 'green':'lightgrey'}"></div> 
+
+           <div class="stepConectorPiece" [ngStyle]="{'background': stepOne ? 'green':'lightgrey'}"></div>
            <div class="stepCircle" [ngStyle]="{'background': stepTwo ? 'green' : 'lightgrey'}">
                2
            </div>
-             
-           <div class="stepConectorPiece" [ngStyle]="{'background': stepTwo ? 'green' : 'lightgrey'}"></div>  
+
+           <div class="stepConectorPiece" [ngStyle]="{'background': stepTwo ? 'green' : 'lightgrey'}"></div>
            <div class="stepCircle" [ngStyle]="{'background': stepThree ? 'green':'lightgrey'}">
                3
            </div>
@@ -18,54 +18,54 @@
 
        <div class="container" *ngIf="subjectInfoComplete">
            <div class="one">
-           <input type="text" 
+           <input type="text"
                class="input"
                placeholder="Title"
                [(ngModel)]="subject.title">
            </div>
            <div class="two">
-           <input type="text" 
+           <input type="text"
                class="input"
                placeholder="Description"
                [(ngModel)]="subject.description">
            </div>
            <div class="two">
-               <input type="text" 
+               <input type="text"
                class="input"
                placeholder="Duration"
                [(ngModel)]="subject.duration">
            </div>
            <div class="three">
                <div class="customerListItemsContainer" style="font-size: small" > Choose one</div>
-               <input type="radio" value="PROFESSIONAL" name="type" required [(ngModel)]="subject.type"> PROFESSIONAL
-               <input type="radio" value="RESEARCH" name="type" required [(ngModel)]="subject.type"> RESEARCH
+               <input class="custom-radio" type="radio" value="PROFESSIONAL" name="type" required [(ngModel)]="subject.type"> PROFESSIONAL
+               <input type="radio" class="custom-radio" value="RESEARCH" name="type" required [(ngModel)]="subject.type"> RESEARCH
            </div>
            <div class="four">
-           <button class="submit" (click)="subjectSubmit()">Submit</button>
+           <button class="btn btn-primary submit" (click)="subjectSubmit()">Submit</button>
            </div>
        </div>
 
        <div class="container" *ngIf="entrepriseInfoComplete">
            <div class="one">
-           <input type="text" 
+           <input type="text"
                class="input"
                placeholder="Nom de l'entreprise"
                [(ngModel)]="subject.entreprise.name">
            </div>
            <div class="two">
-           <input type="text" 
+           <input type="text"
                class="input"
                placeholder="Domaine"
                [(ngModel)]="subject.entreprise.field">
            </div>
            <div class="two">
-               <input type="text" 
+               <input type="text"
                class="input"
                placeholder="Pays"
                [(ngModel)]="subject.entreprise.country">
            </div>
            <div class="three">
-           <input type="text" 
+           <input type="text"
                class="input"
                placeholder="Website"
                [(ngModel)]="subject.entreprise.website">
@@ -77,9 +77,9 @@
 
        <div class="container" *ngIf="professorRequestComplete">
            <div class="one">
-               <ul>
-                   <li *ngFor='let professor of professors' (click)="onSelect(professor)"> {{professor.firstName}} - {{professor.lastName}}</li>
-               </ul>
+               <select class="form-control">
+                   <option *ngFor='let professor of professors' (change)="onSelect(professor)" [value]="professor"> {{professor.firstName}} - {{professor.lastName}}</option>
+               </select>
            </div>
            <div class="four">
            <button class="submit" (click)="professorSubmit()">Submit</button>
@@ -92,11 +92,11 @@
    <div class="col-6" *ngIf="!loading">
        <div class="customerContactContainer">
            <div class="nameTitle">Prénom</div>
-           <div class="name">{{subject.student.firstname}}</div>
+           <div class="name">{{subject.student.firstName}}</div>
        </div>
        <div class="customerContactContainer">
            <div class="nameTitle">Nom</div>
-           <div class="name">{{subject.student.firstname}}</div>
+           <div class="name">{{subject.student.lastName}}</div>
        </div>
        <div class="customerContactContainer">
            <div class="nameTitle">filiere</div>

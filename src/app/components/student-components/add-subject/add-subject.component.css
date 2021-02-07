@@ -5,14 +5,14 @@
     margin-right:auto;
     margin-bottom:20px;
 }
-  
+
 .stepConectorPiece {
     height:3px;
     background:lightgrey;
     flex:1;
     margin-top:19px;
 }
-  
+
 .stepCircle {
     width:40px;
     height:40px;
@@ -23,8 +23,8 @@
     color:#ffffff;
     font-family:helvetica;
 }
-  
-  
+
+
 .container {
     display:flex;
     flex-direction:column;
@@ -33,28 +33,28 @@
     margin-left:auto;
     margin-right:auto;
 }
-  
+
 .one,
 .two,
 .three {
     flex:1;
     padding:5px;
 }
-  
+
 .one {
     padding-top:10px;
 }
-  
+
 .three {
     padding-bottom:10px;
 }
-  
+
 .four {
     flex:1;
     position:relative;
     height:40px;
 }
-  
+
 .input{
     width:90%;
     display:block;
@@ -65,28 +65,18 @@
     line-height:32px;
     padding-left:10px;
 }
-  
+
 .submit {
     position:absolute;
     right:14px;
-    background:darkblue;
-    color:#ffffff;
-    height:26px;
-    padding-left:10px;
-    padding-right:10px;
-    border:none;
-    font-size:10px;
-    font-weight:600;
-    text-transform:uppercase;
-    cursor:pointer;
 }
-  
+
 .thankYou {
     text-align:center;
     font-family:helvetica;
     font-weight:800;
 }
-  
+
 .customerContactContainer {
     display:flex;
     height:32px;
@@ -96,23 +86,23 @@
     margin-top:20px;
     margin-left:auto;
     margin-right:auto;
-  
+
 }
-  
+
 .nameTitle {
     width:50%;
     background:#f6f6f6;
     padding-left:10px;
     font-size:12px;
 }
-  
+
 .emailTitle {
     flex:1;
     background:#f6f6f6;
     padding-left:10px;
     font-size:12px;
 }
-  
+
 .customerListItemsContainer {
     display:flex;
     height:32px;
@@ -124,12 +114,12 @@
     font-family:helvetica;
     font-size:12px;
 }
-  
+
 .name {
     width:100px;
     padding-left:10px;
 }
-  
+
 .email {
     flex:1;
     padding-left:10px;
