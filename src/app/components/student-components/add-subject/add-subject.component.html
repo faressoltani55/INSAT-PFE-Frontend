@@ -1,3 +1,142 @@
-<p>The student is only allowed to add a new subject ONCE!<br> 
-   We have to test whether or not a subject is already associated
-   with the student before showing the submission form</p>
+<div class="row">
+   <div class="col-6">
+       <div class="stepsContainer">
+           <div class="stepCircle" [ngStyle]="{'background': stepOne ? 'green':'lightgrey'}">
+               1
+           </div>
+             
+           <div class="stepConectorPiece" [ngStyle]="{'background': stepOne ? 'green':'lightgrey'}"></div> 
+           <div class="stepCircle" [ngStyle]="{'background': stepTwo ? 'green' : 'lightgrey'}">
+               2
+           </div>
+             
+           <div class="stepConectorPiece" [ngStyle]="{'background': stepTwo ? 'green' : 'lightgrey'}"></div>  
+           <div class="stepCircle" [ngStyle]="{'background': stepThree ? 'green':'lightgrey'}">
+               3
+           </div>
+       </div>
+
+       <div class="container" *ngIf="subjectInfoComplete">
+           <div class="one">
+           <input type="text" 
+               class="input"
+               placeholder="Title"
+               [(ngModel)]="subject.title">
+           </div>
+           <div class="two">
+           <input type="text" 
+               class="input"
+               placeholder="Description"
+               [(ngModel)]="subject.description">
+           </div>
+           <div class="two">
+               <input type="text" 
+               class="input"
+               placeholder="Duration"
+               [(ngModel)]="subject.duration">
+           </div>
+           <div class="three">
+               <div class="customerListItemsContainer" style="font-size: small" > Choose one</div>
+               <input type="radio" value="PROFESSIONAL" name="type" required [(ngModel)]="subject.type"> PROFESSIONAL
+               <input type="radio" value="RESEARCH" name="type" required [(ngModel)]="subject.type"> RESEARCH
+           </div>
+           <div class="four">
+           <button class="submit" (click)="subjectSubmit()">Submit</button>
+           </div>
+       </div>
+
+       <div class="container" *ngIf="entrepriseInfoComplete">
+           <div class="one">
+           <input type="text" 
+               class="input"
+               placeholder="Nom de l'entreprise"
+               [(ngModel)]="subject.entreprise.name">
+           </div>
+           <div class="two">
+           <input type="text" 
+               class="input"
+               placeholder="Domaine"
+               [(ngModel)]="subject.entreprise.field">
+           </div>
+           <div class="two">
+               <input type="text" 
+               class="input"
+               placeholder="Pays"
+               [(ngModel)]="subject.entreprise.country">
+           </div>
+           <div class="three">
+           <input type="text" 
+               class="input"
+               placeholder="Website"
+               [(ngModel)]="subject.entreprise.website">
+           </div>
+           <div class="four">
+           <button class="submit" (click)="entrepriseSubmit()">Submit</button>
+           </div>
+       </div>
+
+       <div class="container" *ngIf="professorRequestComplete">
+           <div class="one">
+               <ul>
+                   <li *ngFor='let professor of professors' (click)="onSelect(professor)"> {{professor.firstName}} - {{professor.lastName}}</li>
+               </ul>
+           </div>
+           <div class="four">
+           <button class="submit" (click)="professorSubmit()">Submit</button>
+           </div>
+       </div>
+
+       <div class="thankYou" *ngIf="completedRequest">Thank You!<br>Your Request is Complete</div>
+   </div>
+
+   <div class="col-6">
+       <div class="customerContactContainer">
+           <div class="nameTitle">Prénom</div>
+           <div class="name">{{subject.student.firstname}}</div>
+       </div>
+       <div class="customerContactContainer">
+           <div class="nameTitle">Nom</div>
+           <div class="name">{{subject.student.firstname}}</div>
+       </div>
+       <div class="customerContactContainer">
+           <div class="nameTitle">filiere</div>
+           <div class="name">{{subject.student.major}}</div>
+       </div>
+       <div class="customerContactContainer">
+           <div class="nameTitle">numero d'inscription</div>
+           <div class="name">{{subject.student.studentNumber}}</div>
+       </div>
+       <div class="customerContactContainer">
+           <div class="nameTitle">titre</div>
+           <div class="name">{{subject.title}}</div>
+       </div>
+       <div class="customerContactContainer">
+           <div class="nameTitle">Description</div>
+           <div class="name">{{subject.description}}</div>
+       </div>
+       <div class="customerContactContainer">
+           <div class="nameTitle">Duration</div>
+           <div class="name">{{subject.duration}}</div>
+       </div>
+       <div class="customerContactContainer">
+           <div class="nameTitle">Type</div>
+           <div class="name">{{subject.type}}</div>
+       </div>
+       <div class="customerContactContainer">
+           <div class="nameTitle">Nom de l'entreprise</div>
+           <div class="name">{{subject.entreprise.name}}</div>
+       </div>
+       <div class="customerContactContainer">
+           <div class="nameTitle">Domaine</div>
+           <div class="name">{{subject.entreprise.field}}</div>
+       </div>
+       <div class="customerContactContainer">
+           <div class="nameTitle">Pays</div>
+           <div class="name">{{subject.entreprise.country}}</div>
+       </div>
+       <div class="customerContactContainer">
+           <div class="nameTitle">Website</div>
+           <div class="name">{{subject.entreprise.website}}</div>
+       </div>
+   </div>
+</div>
