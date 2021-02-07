@@ -16,6 +16,10 @@ export class SujetService {
     return this.http.get(Utils.baseUrl + '/pfe/student/'+ id ) as Observable<Subject>;
   }
 
+  public getSubjectByRequestedProfessor(id): Observable<Subject> {
+    return this.http.get(Utils.baseUrl + '/pfe/requested/professor'+ id ) as Observable<Subject>;
+  }
+  
   public getAllSujets(): Observable<Subject[]> {
     return this.http.get(Utils.baseUrl + '/pfe' ) as Observable<Subject[]>;
   }

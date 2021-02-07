@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SujetService } from 'src/app/services/sujet.service';
+import { Subject } from 'src/app/utils/models/Subject';
 
 @Component({
   selector: 'app-professor-home',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfessorHomeComponent implements OnInit {
 
-  constructor() { }
+  pfeSubjectsWhereRequestedAsProfessor
+  constructor( private sujetService: SujetService) { }
 
   ngOnInit(): void {
+    this.sujetService.getSubjectByRequestedProfessor(localStorage.getItem('user')).subscribe((data) => {
+      console.log(data)
+      this.pfeSubjectsWhereRequestedAsProfessor = data
+    }
+    )
   }
 
 }
