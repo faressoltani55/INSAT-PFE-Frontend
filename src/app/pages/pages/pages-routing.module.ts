@@ -16,7 +16,6 @@ const routes: Routes = [
       },
       { path: 'home',
         canActivate: [AuthGuard],
-        data: {role: 'STUDENT'},
         loadChildren: () => import('../home/home.module').then(mod => mod.HomeModule)
       },
       { path: 'search',

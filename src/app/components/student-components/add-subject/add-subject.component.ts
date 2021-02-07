@@ -23,22 +23,26 @@ export class AddSubjectComponent implements OnInit {
   stepThree: boolean;
 
 
-  subject: Subject;
+  subject: Subject = new Subject();
   professors: any;
-
+  loading = false;
   constructor(private sujetService: SujetService,
     private studentService: StudentService,
     private professorService: ProfessorService) { }
 
-  ngOnInit() { 
+  ngOnInit() {
+    console.log(this.subject);
+    this.loading = true;
     this.professorService.getAllProfessors().subscribe(data => {
       this.professors = data;
     });
     this.subject.professorRequested = false;
 
-    
-    this.sujetService.getSubjectByStudent(localStorage.getItem('id')).subscribe( data => {
-      if(data){
+    const id = localStorage.getItem('user');
+    console.log(id);
+    this.sujetService.getSubjectByStudent(id).subscribe( data => {
+      if (data){
+        console.log(data);
         this.subject = data;
 
         this.subjectInfoComplete = false;
@@ -52,8 +56,8 @@ export class AddSubjectComponent implements OnInit {
       }
       else{
         this.subject = new Subject();
-        this.studentService.getStudent(localStorage.getItem('id')).subscribe(data => {
-          this.subject.student = data ;
+        this.studentService.getStudent(id).subscribe(student => {
+          this.subject.student = student ;
         });
         this.subject.student = new Student();
         this.subject.entreprise = new Entreprise();
@@ -68,6 +72,8 @@ export class AddSubjectComponent implements OnInit {
         this.stepThree = false;
 
       }
+      console.log(this.subject);
+      this.loading = false;
     });
   }
 

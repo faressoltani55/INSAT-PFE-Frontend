@@ -5,6 +5,9 @@ import { HomeRoutingModule } from './home-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home.component';
 import { HttpClientModule } from '@angular/common/http';
+import {SearchModule} from "../search/search.module";
+import {ProfessorComponentsModule} from "../../components/professor-components/professor-components.module";
+import {StudentComponentsModule} from "../../components/student-components/student-components.module";
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     HomeRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SearchModule,
+    ProfessorComponentsModule,
+    StudentComponentsModule
   ],
 })
 export class HomeModule { }

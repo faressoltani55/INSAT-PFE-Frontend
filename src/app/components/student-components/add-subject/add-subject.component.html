@@ -89,7 +89,7 @@
        <div class="thankYou" *ngIf="completedRequest">Thank You!<br>Your Request is Complete</div>
    </div>
 
-   <div class="col-6">
+   <div class="col-6" *ngIf="!loading">
        <div class="customerContactContainer">
            <div class="nameTitle">Prénom</div>
            <div class="name">{{subject.student.firstname}}</div>

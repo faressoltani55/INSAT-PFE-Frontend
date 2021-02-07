@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ProfessorHomeComponent, AssociatedSubjectsComponent, StudentRequestsComponent],
+  exports: [
+    ProfessorHomeComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,

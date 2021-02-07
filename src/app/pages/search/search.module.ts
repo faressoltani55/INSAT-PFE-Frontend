@@ -12,6 +12,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [SearchComponent, ProfessorsComponent, EtudiantsComponent, SoutenancesComponent, SujetsComponent],
+  exports: [
+    ProfessorsComponent
+  ],
   imports: [
     CommonModule,
     SearchRoutingModule,

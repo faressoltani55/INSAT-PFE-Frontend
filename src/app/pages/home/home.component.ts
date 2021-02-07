@@ -10,6 +10,9 @@ export class HomeComponent implements OnInit {
 
   constructor(){}
 
-  ngOnInit(){}
+  role;
+  ngOnInit(): void {
+    this.role = localStorage.getItem('role');
+  }
 
 }

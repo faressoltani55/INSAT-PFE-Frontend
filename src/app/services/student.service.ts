@@ -23,11 +23,11 @@ export class StudentService {
   }
 
   public getStudent(id): Observable<Student> {
-    return this.http.get(Utils.baseUrl + '/students/'+ id ) as Observable<Student>;
+    return this.http.get(Utils.baseUrl + '/students/' + id ) as Observable<Student>;
   }
 
   public updateStudent(id, body): Observable<Student> {
-    return this.http.put(Utils.baseUrl + '/students/'+ id, body ) as Observable<Student>;
+    return this.http.put(Utils.baseUrl + '/students/' + id, body ) as Observable<Student>;
   }
 }
 
